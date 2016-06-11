@@ -81,6 +81,13 @@ class JsonSchemaTest extends \PHPUnit_Framework_TestCase
         self::assertTrue($actual);
     }
     
+    public function testIsValidJsonDecodedArray()
+    {
+        $actual = $this->sut->isValid(json_decode('{"Foo":"Bar"}', true));
+
+        self::assertTrue($actual);
+    }
+    
     public function testNotIsValidDueToSchemaValidation()
     {
         $actual = $this->sut->isValid('{"Foo":1234}');

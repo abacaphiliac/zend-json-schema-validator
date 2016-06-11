@@ -134,8 +134,12 @@ class JsonSchema extends AbstractValidator
      */
     private function decodeValue($value)
     {
+        if ($value instanceof \stdClass) {
+            return $value;
+        }
+        
         $encoded = $value;
-        if (!is_scalar($value)) {
+        if (is_array($value)) {
             $encoded = Json::encode($value);
         }
 
