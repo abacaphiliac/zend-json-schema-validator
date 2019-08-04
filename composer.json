@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3",
+        "php": ">=5.6",
         "justinrainbow/json-schema": "^2.0",
         "zendframework/zend-json": "^3.0|^2.0",
         "zendframework/zend-validator": "^2.0"
